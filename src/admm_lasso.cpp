@@ -74,7 +74,7 @@ Rcpp::List admm_lasso(const arma::mat& A, const arma::colvec& b, const double la
   arma::vec h_eps_dual(maxiter,fill::zeros);
 
   double rho2 = rho*rho;
-  double sqrtn = sqrt(n);
+  double sqrtn = sqrt(static_cast<double>(n));
   int k;
   for (k=0;k<maxiter;k++){
     // 4-1. update 'x'

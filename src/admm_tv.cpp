@@ -60,7 +60,7 @@ Rcpp::List admm_tv(const arma::colvec& b, arma::colvec& xinit, const double lamb
   arma::vec h_eps_pri(maxiter,fill::zeros);
   arma::vec h_eps_dual(maxiter,fill::zeros);
 
-  double sqrtn = sqrt(n);
+  double sqrtn = sqrt(static_cast<double>(n));
   arma::vec compare2(2,fill::zeros);
   int k;
   for (k=0;k<maxiter;k++){

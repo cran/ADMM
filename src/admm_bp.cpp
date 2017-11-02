@@ -58,7 +58,7 @@ Rcpp::List admm_bp(const arma::mat& A, const arma::colvec& b, arma::colvec& xini
   arma::vec h_eps_pri(maxiter,fill::zeros);
   arma::vec h_eps_dual(maxiter,fill::zeros);
 
-  double sqrtn = sqrt(n);
+  double sqrtn = sqrt(static_cast<double>(n));
   int k;
   for (k=0;k<maxiter;k++){
     // 4-1. update 'x'

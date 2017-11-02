@@ -52,8 +52,8 @@ Rcpp::List admm_lad(const arma::mat& A, const arma::colvec& b, arma::colvec& xin
   arma::vec h_eps_pri(maxiter,fill::zeros);
   arma::vec h_eps_dual(maxiter,fill::zeros);
 
-  double sqrtn = sqrt(n);
-  double sqrtm = sqrt(m);
+  double sqrtn = sqrt(static_cast<double>(n));
+  double sqrtm = sqrt(static_cast<double>(m));
   arma::vec compare3(3,fill::zeros);
   int k;
   for (k=0;k<maxiter;k++){
