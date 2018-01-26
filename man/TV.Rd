@@ -8,15 +8,15 @@ admm.tv(b, lambda = 1, xinit = NA, rho = 1, alpha = 1, abstol = 1e-04,
   reltol = 0.01, maxiter = 1000)
 }
 \arguments{
-\item{b}{a length \code{m} response vector}
+\item{b}{a length-\eqn{m} response vector}
 
 \item{lambda}{regularization parameter}
 
-\item{xinit}{a length \code{m} vector for initial value}
+\item{xinit}{a length\eqn{m} vector for initial value}
 
 \item{rho}{an augmented Lagrangian parameter}
 
-\item{alpha}{an overrelaxation parameter in [1,2]}
+\item{alpha}{an overrelaxation parameter in \eqn{[1,2]}}
 
 \item{abstol}{absolute tolerance stopping criterion}
 
@@ -26,15 +26,15 @@ admm.tv(b, lambda = 1, xinit = NA, rho = 1, alpha = 1, abstol = 1e-04,
 }
 \value{
 a named list containing \describe{
-\item{x}{a length-\code{m} solution vector}
+\item{x}{a length-\eqn{m} solution vector}
 \item{history}{dataframe recording iteration numerics. See the section for more details.}
 }
 }
 \description{
 1-dimensional total variation minimization - also known as
 signal denoising - is to solve the following
-\deqn{min (1/2)*|x-b|_2^2 + lambda*\sum_i |x_{i+1}-x_i|}
-for a given signal \code{b}.
+\deqn{min_x ~ \frac{1}{2}\|x-b\|_2^2 + \lambda \sum_i |x_{i+1}-x_i|}
+for a given signal \eqn{b}.
 The implementation is borrowed from Stephen Boyd's
 \href{http://stanford.edu/~boyd/papers/admm/total_variation/total_variation.html}{MATLAB code}.
 }

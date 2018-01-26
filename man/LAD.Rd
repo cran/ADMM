@@ -8,11 +8,11 @@ admm.lad(A, b, xinit = NA, rho = 1, alpha = 1, abstol = 1e-04,
   reltol = 0.01, maxiter = 1000)
 }
 \arguments{
-\item{A}{an \code{(m-by-n)} regressor matrix}
+\item{A}{an \eqn{(m\times n)} regressor matrix}
 
-\item{b}{a length \code{m} response vector}
+\item{b}{a length-\eqn{m} response vector}
 
-\item{xinit}{a length \code{n} vector for initial value}
+\item{xinit}{a length-\eqn{n} vector for initial value}
 
 \item{rho}{an augmented Lagrangian parameter}
 
@@ -26,13 +26,13 @@ admm.lad(A, b, xinit = NA, rho = 1, alpha = 1, abstol = 1e-04,
 }
 \value{
 a named list containing \describe{
-\item{x}{a length-\code{n} solution vector}
+\item{x}{a length-\eqn{n} solution vector}
 \item{history}{dataframe recording iteration numerics. See the section for more details.}
 }
 }
 \description{
 Least Absolute Deviations (LAD) is an alternative to traditional Least Sqaures by using cost function
-\deqn{min |Ax-b|_1}
+\deqn{min_x ~ \|Ax-b\|_1}
 to use \eqn{\ell_1} norm instead of square loss for robust estimation of coefficient.
 }
 \section{Iteration History}{

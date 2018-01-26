@@ -1,15 +1,15 @@
 #' LASSO
 #'
 #' LASSO, or L1-regularized regression, is an optimization problem to solve
-#' \deqn{min 1/2*|Ax_b|_2^2 + \lambda |x|_1}
-#' for sparsifying the coefficient vector \code{x}.
+#' \deqn{min_x ~ \frac{1}{2}\|Ax-b\|_2^2 + \lambda \|x\|_1}
+#' for sparsifying the coefficient vector \eqn{x}.
 #' The implementation is borrowed from Stephen Boyd's
 #' \href{http://stanford.edu/~boyd/papers/admm/lasso/lasso.html}{MATLAB code}.
 #'
-#' @param A an \code{(m-by-n)} regressor matrix
-#' @param b a length \code{m} response vector
+#' @param A an \eqn{(m\times n)} regressor matrix
+#' @param b a length-\eqn{m} response vector
 #' @param lambda a regularization parameber
-#' @param xinit a length \code{n} vector for initial value
+#' @param xinit a length-\eqn{n} vector for initial value
 #' @param rho an augmented Lagrangian parameter
 #' @param alpha an overrelaxation parameter in [1,2]
 #' @param abstol absolute tolerance stopping criterion
@@ -17,7 +17,7 @@
 #' @param maxiter maximum number of iterations
 #'
 #' @return a named list containing \describe{
-#' \item{x}{a length-\code{n} solution vector}
+#' \item{x}{a length-\eqn{n} solution vector}
 #' \item{history}{dataframe recording iteration numerics. See the section for more details.}
 #' }
 #'
@@ -59,6 +59,9 @@
 #' plot(1:niter, output$history$objval, "b", main="cost function")
 #' plot(1:niter, output$history$r_norm, "b", main="primal residual")
 #' plot(1:niter, output$history$s_norm, "b", main="dual residual")
+#'
+#' @references
+#' \insertRef{tibshirani_regression_1996}{ADMM}
 #'
 #' @rdname LASSO
 #' @export

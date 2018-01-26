@@ -2,22 +2,22 @@
 #'
 #' 1-dimensional total variation minimization - also known as
 #' signal denoising - is to solve the following
-#' \deqn{min (1/2)*|x-b|_2^2 + lambda*\sum_i |x_{i+1}-x_i|}
-#' for a given signal \code{b}.
+#' \deqn{min_x ~ \frac{1}{2}\|x-b\|_2^2 + \lambda \sum_i |x_{i+1}-x_i|}
+#' for a given signal \eqn{b}.
 #' The implementation is borrowed from Stephen Boyd's
 #' \href{http://stanford.edu/~boyd/papers/admm/total_variation/total_variation.html}{MATLAB code}.
 #'
-#' @param b a length \code{m} response vector
+#' @param b a length-\eqn{m} response vector
 #' @param lambda regularization parameter
-#' @param xinit a length \code{m} vector for initial value
+#' @param xinit a length\eqn{m} vector for initial value
 #' @param rho an augmented Lagrangian parameter
-#' @param alpha an overrelaxation parameter in [1,2]
+#' @param alpha an overrelaxation parameter in \eqn{[1,2]}
 #' @param abstol absolute tolerance stopping criterion
 #' @param reltol relative tolerance stopping criterion
 #' @param maxiter maximum number of iterations
 #'
 #' @return a named list containing \describe{
-#' \item{x}{a length-\code{m} solution vector}
+#' \item{x}{a length-\eqn{m} solution vector}
 #' \item{history}{dataframe recording iteration numerics. See the section for more details.}
 #' }
 #'

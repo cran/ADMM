@@ -8,11 +8,11 @@ admm.bp(A, b, xinit = NA, rho = 1, alpha = 1, abstol = 1e-04,
   reltol = 0.01, maxiter = 1000)
 }
 \arguments{
-\item{A}{an \code{(m-by-n)} regressor matrix}
+\item{A}{an \eqn{(m \times n)} regressor matrix}
 
-\item{b}{a length \code{m} response vector}
+\item{b}{a length-\eqn{m} response vector}
 
-\item{xinit}{a length \code{n} vector for initial value}
+\item{xinit}{a length-\eqn{n} vector for initial value}
 
 \item{rho}{an augmented Lagrangian parameter}
 
@@ -26,14 +26,14 @@ admm.bp(A, b, xinit = NA, rho = 1, alpha = 1, abstol = 1e-04,
 }
 \value{
 a named list containing \describe{
-\item{x}{a length-\code{n} solution vector}
+\item{x}{a length-\eqn{n} solution vector}
 \item{history}{dataframe recording iteration numerics. See the section for more details.}
 }
 }
 \description{
 For an underdetermined system, Basis Pursuit
 aims to find a sparse solution that solves
-\deqn{min \|x\|_1 s.t. Ax=b}
+\deqn{min_x ~  \|x\|_1 \quad \textrm{s.t} \quad Ax=b}
 which is a relaxed version of strict non-zero support finding problem.
 The implementation is borrowed from Stephen Boyd's
 \href{https://web.stanford.edu/~boyd/papers/admm/basis_pursuit/basis_pursuit.html}{MATLAB code}.

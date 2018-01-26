@@ -2,14 +2,14 @@
 #'
 #' For an underdetermined system, Basis Pursuit
 #' aims to find a sparse solution that solves
-#' \deqn{min \|x\|_1 s.t. Ax=b}
+#' \deqn{min_x ~  \|x\|_1 \quad \textrm{s.t} \quad Ax=b}
 #' which is a relaxed version of strict non-zero support finding problem.
 #' The implementation is borrowed from Stephen Boyd's
 #' \href{https://web.stanford.edu/~boyd/papers/admm/basis_pursuit/basis_pursuit.html}{MATLAB code}.
 #'
-#' @param A an \code{(m-by-n)} regressor matrix
-#' @param b a length \code{m} response vector
-#' @param xinit a length \code{n} vector for initial value
+#' @param A an \eqn{(m \times n)} regressor matrix
+#' @param b a length-\eqn{m} response vector
+#' @param xinit a length-\eqn{n} vector for initial value
 #' @param rho an augmented Lagrangian parameter
 #' @param alpha an overrelaxation parameter in [1,2]
 #' @param abstol absolute tolerance stopping criterion
@@ -17,7 +17,7 @@
 #' @param maxiter maximum number of iterations
 #'
 #' @return a named list containing \describe{
-#' \item{x}{a length-\code{n} solution vector}
+#' \item{x}{a length-\eqn{n} solution vector}
 #' \item{history}{dataframe recording iteration numerics. See the section for more details.}
 #' }
 #'

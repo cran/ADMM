@@ -8,13 +8,13 @@ admm.lasso(A, b, lambda = 1, xinit = NA, rho = 1, alpha = 1,
   abstol = 1e-04, reltol = 0.01, maxiter = 1000)
 }
 \arguments{
-\item{A}{an \code{(m-by-n)} regressor matrix}
+\item{A}{an \eqn{(m\times n)} regressor matrix}
 
-\item{b}{a length \code{m} response vector}
+\item{b}{a length-\eqn{m} response vector}
 
 \item{lambda}{a regularization parameber}
 
-\item{xinit}{a length \code{n} vector for initial value}
+\item{xinit}{a length-\eqn{n} vector for initial value}
 
 \item{rho}{an augmented Lagrangian parameter}
 
@@ -28,14 +28,14 @@ admm.lasso(A, b, lambda = 1, xinit = NA, rho = 1, alpha = 1,
 }
 \value{
 a named list containing \describe{
-\item{x}{a length-\code{n} solution vector}
+\item{x}{a length-\eqn{n} solution vector}
 \item{history}{dataframe recording iteration numerics. See the section for more details.}
 }
 }
 \description{
 LASSO, or L1-regularized regression, is an optimization problem to solve
-\deqn{min 1/2*|Ax_b|_2^2 + \lambda |x|_1}
-for sparsifying the coefficient vector \code{x}.
+\deqn{min_x ~ \frac{1}{2}\|Ax-b\|_2^2 + \lambda \|x\|_1}
+for sparsifying the coefficient vector \eqn{x}.
 The implementation is borrowed from Stephen Boyd's
 \href{http://stanford.edu/~boyd/papers/admm/lasso/lasso.html}{MATLAB code}.
 }
@@ -80,4 +80,7 @@ plot(1:niter, output$history$objval, "b", main="cost function")
 plot(1:niter, output$history$r_norm, "b", main="primal residual")
 plot(1:niter, output$history$s_norm, "b", main="dual residual")
 
+}
+\references{
+\insertRef{tibshirani_regression_1996}{ADMM}
 }

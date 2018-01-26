@@ -1,13 +1,13 @@
 #' Least Absolute Deviations
 #'
 #' Least Absolute Deviations (LAD) is an alternative to traditional Least Sqaures by using cost function
-#' \deqn{min |Ax-b|_1}
+#' \deqn{min_x ~ \|Ax-b\|_1}
 #' to use \eqn{\ell_1} norm instead of square loss for robust estimation of coefficient.
 #'
 #'
-#' @param A an \code{(m-by-n)} regressor matrix
-#' @param b a length \code{m} response vector
-#' @param xinit a length \code{n} vector for initial value
+#' @param A an \eqn{(m\times n)} regressor matrix
+#' @param b a length-\eqn{m} response vector
+#' @param xinit a length-\eqn{n} vector for initial value
 #' @param rho an augmented Lagrangian parameter
 #' @param alpha an overrelaxation parameter in [1,2]
 #' @param abstol absolute tolerance stopping criterion
@@ -15,7 +15,7 @@
 #' @param maxiter maximum number of iterations
 #'
 #' @return a named list containing \describe{
-#' \item{x}{a length-\code{n} solution vector}
+#' \item{x}{a length-\eqn{n} solution vector}
 #' \item{history}{dataframe recording iteration numerics. See the section for more details.}
 #' }
 #'
