@@ -1,7 +1,7 @@
 Package: ADMM
 Type: Package
 Title: Algorithms using Alternating Direction Method of Multipliers
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: person("Kisung", "You", role = c("aut", "cre"),
                      email = "kyou@nd.edu",comment=c(ORCID="0000-0002-8584-459X")) 
 Description: Provides algorithms to solve popular optimization problems in statistics such as regression or denoising based on Alternating Direction Method of Multipliers (ADMM).
@@ -14,8 +14,8 @@ LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 6.0.1
 RdMacros: Rdpack
 NeedsCompilation: yes
-Packaged: 2018-01-26 23:39:17 UTC; kisung
-Author: Kisung You <https://orcid.org/0000-0002-8584-459X> [aut, cre]
+Packaged: 2018-02-06 00:35:02 UTC; kisung
+Author: Kisung You [aut, cre] (<https://orcid.org/0000-0002-8584-459X>)
 Maintainer: Kisung You <kyou@nd.edu>
 Repository: CRAN
-Date/Publication: 2018-01-26 23:47:35 UTC
+Date/Publication: 2018-02-06 04:17:48 UTC
