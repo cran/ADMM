@@ -12,7 +12,7 @@ admm.tv(b, lambda = 1, xinit = NA, rho = 1, alpha = 1, abstol = 1e-04,
 
 \item{lambda}{regularization parameter}
 
-\item{xinit}{a length\eqn{m} vector for initial value}
+\item{xinit}{a length-\eqn{m} vector for initial value}
 
 \item{rho}{an augmented Lagrangian parameter}
 
@@ -33,7 +33,7 @@ a named list containing \describe{
 \description{
 1-dimensional total variation minimization - also known as
 signal denoising - is to solve the following
-\deqn{min_x ~ \frac{1}{2}\|x-b\|_2^2 + \lambda \sum_i |x_{i+1}-x_i|}
+\deqn{\textrm{min}_x ~ \frac{1}{2}\|x-b\|_2^2 + \lambda \sum_i |x_{i+1}-x_i|}
 for a given signal \eqn{b}.
 The implementation is borrowed from Stephen Boyd's
 \href{http://stanford.edu/~boyd/papers/admm/total_variation/total_variation.html}{MATLAB code}.
