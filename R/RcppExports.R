@@ -7,51 +7,39 @@ multipleinversion <- function(A, rho, L, R, lambda2) {
     .Call('_ADMM_multipleinversion', PACKAGE = 'ADMM', A, rho, L, R, lambda2)
 }
 
-#' @keywords internal
-#' @noRd
+admm_tv <- function(b, xinit, lambda, reltol, abstol, maxiter, rho, alpha) {
+    .Call('_ADMM_admm_tv', PACKAGE = 'ADMM', b, xinit, lambda, reltol, abstol, maxiter, rho, alpha)
+}
+
 admm_bp <- function(A, b, xinit, reltol, abstol, maxiter, rho, alpha) {
     .Call('_ADMM_admm_bp', PACKAGE = 'ADMM', A, b, xinit, reltol, abstol, maxiter, rho, alpha)
 }
 
-#' @keywords internal
-#' @noRd
 admm_enet <- function(A, b, lambda, alpha, reltol, abstol, maxiter, rho) {
     .Call('_ADMM_admm_enet', PACKAGE = 'ADMM', A, b, lambda, alpha, reltol, abstol, maxiter, rho)
 }
 
-#' @keywords internal
-#' @noRd
 admm_genlasso <- function(A, b, D, lambda, reltol, abstol, maxiter, rho) {
     .Call('_ADMM_admm_genlasso', PACKAGE = 'ADMM', A, b, D, lambda, reltol, abstol, maxiter, rho)
 }
 
-#' @keywords internal
-#' @noRd
 admm_lad <- function(A, b, xinit, reltol, abstol, maxiter, rho, alpha) {
     .Call('_ADMM_admm_lad', PACKAGE = 'ADMM', A, b, xinit, reltol, abstol, maxiter, rho, alpha)
 }
 
-#' @keywords internal
-#' @noRd
 admm_lasso <- function(A, b, lambda, xinit, reltol, abstol, maxiter, rho, alpha) {
     .Call('_ADMM_admm_lasso', PACKAGE = 'ADMM', A, b, lambda, xinit, reltol, abstol, maxiter, rho, alpha)
 }
 
-#' @keywords internal
-#' @noRd
 admm_rpca <- function(M, tol, maxiter, mu, lambda) {
     .Call('_ADMM_admm_rpca', PACKAGE = 'ADMM', M, tol, maxiter, mu, lambda)
 }
 
-#' @keywords internal
-#' @noRd
 admm_spca <- function(Sigma, reltol, abstol, maxiter, mu, rho) {
     .Call('_ADMM_admm_spca', PACKAGE = 'ADMM', Sigma, reltol, abstol, maxiter, mu, rho)
 }
 
-#' @keywords internal
-#' @noRd
-admm_tv <- function(b, xinit, lambda, reltol, abstol, maxiter, rho, alpha) {
-    .Call('_ADMM_admm_tv', PACKAGE = 'ADMM', b, xinit, lambda, reltol, abstol, maxiter, rho, alpha)
+admm_sdp <- function(C, listA, b, mymu, myrho, mygamma, maxiter, abstol, printer) {
+    .Call('_ADMM_admm_sdp', PACKAGE = 'ADMM', C, listA, b, mymu, myrho, mygamma, maxiter, abstol, printer)
 }
 

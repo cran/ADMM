@@ -4,8 +4,13 @@
 \alias{admm.rpca}
 \title{Robust Principal Component Analysis}
 \usage{
-admm.rpca(M, lambda = 1/sqrt(max(nrow(M), ncol(M))), mu = 1,
-  tol = 1e-07, maxiter = 1000)
+admm.rpca(
+  M,
+  lambda = 1/sqrt(max(nrow(M), ncol(M))),
+  mu = 1,
+  tol = 1e-07,
+  maxiter = 1000
+)
 }
 \arguments{
 \item{M}{an \eqn{(m\times n)} data matrix}
@@ -53,12 +58,14 @@ out2 = admm.rpca(X, lambda=0.1)
 out3 = admm.rpca(X, lambda=1)
 
 ## visualize sparsity
+opar <- par(no.readonly=TRUE)
 par(mfrow=c(1,3))
 image(out1$S, main="lambda=0.01")
 image(out2$S, main="lambda=0.1")
 image(out3$S, main="lambda=1")
+par(opar)
 
 }
 \references{
-\insertRef{candes_robust_2011}{ADMM}
+\insertRef{candes_robust_2011a}{ADMM}
 }

@@ -4,8 +4,15 @@
 \alias{admm.spca}
 \title{Sparse PCA}
 \usage{
-admm.spca(Sigma, numpc, mu = 1, rho = 1, abstol = 1e-04,
-  reltol = 0.01, maxiter = 1000)
+admm.spca(
+  Sigma,
+  numpc,
+  mu = 1,
+  rho = 1,
+  abstol = 1e-04,
+  reltol = 0.01,
+  maxiter = 1000
+)
 }
 \arguments{
 \item{Sigma}{a \eqn{(p\times p)} (sample) covariance matrix.}
@@ -60,12 +67,12 @@ become smaller than \code{eps_pri} and \code{eps_dual}, respectively.
 \examples{
 ## generate a random matrix and compute its sample covariance
 X    = matrix(rnorm(1000*5),nrow=1000)
-covX = cov(X)
+covX = stats::cov(X)
 
 ## compute 3 sparse basis
 output = admm.spca(covX, 3)
 
 }
 \references{
-\insertRef{ma_alternating_2013}{ADMM}
+\insertRef{ma_alternating_2013a}{ADMM}
 }

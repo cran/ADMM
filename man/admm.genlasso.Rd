@@ -4,8 +4,17 @@
 \alias{admm.genlasso}
 \title{Generalized LASSO}
 \usage{
-admm.genlasso(A, b, D = diag(length(b)), lambda = 1, rho = 1,
-  alpha = 1, abstol = 1e-04, reltol = 0.01, maxiter = 1000)
+admm.genlasso(
+  A,
+  b,
+  D = diag(length(b)),
+  lambda = 1,
+  rho = 1,
+  alpha = 1,
+  abstol = 1e-04,
+  reltol = 0.01,
+  maxiter = 1000
+)
 }
 \arguments{
 \item{A}{an \eqn{(m\times n)} regressor matrix}
@@ -70,15 +79,17 @@ D = diag(n);
 regval = 0.1*Matrix::norm(t(A)\%*\%b, 'I')
 
 ## solve LASSO via reducing from Generalized LASSO
-output = admm.genlasso(A,b,D,lambda=regval) # set D as identity matrix
+output  = admm.genlasso(A,b,D,lambda=regval) # set D as identity matrix
+niter   = length(output$history$s_norm)
+history = output$history
 
-## visualize
 ## report convergence plot
-niter  = length(output$history$s_norm)
+opar <- par(no.readonly=TRUE)
 par(mfrow=c(1,3))
-plot(1:niter, output$history$objval, "b", main="cost function")
-plot(1:niter, output$history$r_norm, "b", main="primal residual")
-plot(1:niter, output$history$s_norm, "b", main="dual residual")
+plot(1:niter, history$objval, "b", main="cost function")
+plot(1:niter, history$r_norm, "b", main="primal residual")
+plot(1:niter, history$s_norm, "b", main="dual residual")
+par(opar)
 
 }
 \references{

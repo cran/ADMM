@@ -4,7 +4,6 @@
 #' \deqn{\textrm{min}_x ~ \|Ax-b\|_1}
 #' to use \eqn{\ell_1} norm instead of square loss for robust estimation of coefficient.
 #'
-#'
 #' @param A an \eqn{(m\times n)} regressor matrix
 #' @param b a length-\eqn{m} response vector
 #' @param xinit a length-\eqn{n} vector for initial value
@@ -34,7 +33,7 @@
 #'
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' ## generate data
 #' m = 1000
 #' n = 100
@@ -47,18 +46,19 @@
 #' b[idx] = b[idx] + 100*rnorm(length(idx))
 #'
 #' ## run the code
-#' output = admm.lad(A,b)
+#' output  = admm.lad(A,b)
+#' niter   = length(output$history$s_norm)
+#' history = output$history
 #'
 #' ## report convergence plot
-#' niter  = length(output$history$s_norm)
+#' opar <- par(no.readonly=TRUE)
 #' par(mfrow=c(1,3))
-#' plot(1:niter, output$history$objval, "b", main="cost function")
-#' plot(1:niter, output$history$r_norm, "b", main="primal residual")
-#' plot(1:niter, output$history$s_norm, "b", main="dual residual")
+#' plot(1:niter, history$objval, "b", main="cost function")
+#' plot(1:niter, history$r_norm, "b", main="primal residual")
+#' plot(1:niter, history$s_norm, "b", main="dual residual")
+#' par(opar)
 #' }
 #'
-#'
-#' @rdname LAD
 #' @export
 admm.lad <- function(A, b, xinit=NA,
                      rho=1.0, alpha=1.0,
