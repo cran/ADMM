@@ -1,8 +1,8 @@
-cfe715ad0304b1b2385b12adc07bd79f *DESCRIPTION
+10f670e49db13267e40a9c4ef9d520ca *DESCRIPTION
 5983da71773881f5a4d5914623cc551b *NAMESPACE
 35da36f813730dc42dadcebe7441c490 *NEWS.md
 f24b8cc0660e76aabf2c1670007686d9 *R/RcppExports.R
-0609ffe86d7cc1f6cb31a6c59e7d379a *R/admm-package.R
+1741c308c573032a80d0fa4d0b38459d *R/admm-package.R
 922b6af5c30cdd6ba53611aad54694e5 *R/admm.bp.R
 8c748f4d6de3433b4019270ad4440444 *R/admm.enet.R
 d53a9f48c40b4eea402d1c30b3a2cabd *R/admm.genlasso.R
@@ -13,11 +13,10 @@ a8dbb14c92515cd5fb282bf2f4e98138 *R/admm.rpca.R
 0f2f930acc07710bef501d1ae67a61c0 *R/admm.spca.R
 280daf5c082b05ec19451ead3bf10830 *R/admm.tv.R
 2a385d87e96e19f7ad45e18930bb145f *R/auxiliary.R
-a54a5f04945e1d88589b94389ca36db6 *R/zzz.R
-5d0ce3cc617aff2da0138b7033c69a27 *README.md
-8614f975178e6c3e7da5b343d855033e *build/partial.rdb
+0bee04698d56b4fa6b1f018045864486 *R/zzz.R
+45e5e90681934191073b175785e6902a *README.md
+0b711234f10c4be121098f538c48ab80 *build/partial.rdb
 b033441a1fbc07672619319fe409a93d *inst/REFERENCES.bib
-1cfdc397301db348e56eae29e708f5c8 *man/ADMM.Rd
 f775ab3710e2ede1f4d6db6de6099c3b *man/admm.bp.Rd
 b0c9d2d3953e337f839b874bb88ea4fc *man/admm.enet.Rd
 eca9e660868885421f4b92aac263b9c5 *man/admm.genlasso.Rd
@@ -27,8 +26,8 @@ b0e49cefc2705ffd1b73941b3163f572 *man/admm.rpca.Rd
 8e6158655d8c1149f8980a8a9c8b5294 *man/admm.sdp.Rd
 f94593c4e8020f8ed855f57b1dafb40c *man/admm.spca.Rd
 076142c778fdfe72bc8068c08a9aedcc *man/admm.tv.Rd
-e4a9a47c4a3aca98677ab8b16336e5de *src/Makevars
-e4a9a47c4a3aca98677ab8b16336e5de *src/Makevars.win
+c89d6b95d18721894ab45341d0fbc7a6 *src/Makevars
+c89d6b95d18721894ab45341d0fbc7a6 *src/Makevars.win
 8bee96212ce90e6906b30ad5b91815e5 *src/RcppExports.cpp
 2e9698a6c007ba116d326de5e7fc4c08 *src/src_auxiliary.cpp
 3444128e283c69f060437623e3cb403d *src/src_gathered.cpp
